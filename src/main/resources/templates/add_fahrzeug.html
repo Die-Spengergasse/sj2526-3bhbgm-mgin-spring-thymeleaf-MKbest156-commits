@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Neues Fahrzeug</title>
+</head>
+<body>
+
+<h1>Neues Fahrzeug hinzufügen</h1>
+
+<form th:action="@{/fahrzeuge/add}" th:object="${fahrzeug}" method="post">
+
+    Marke:
+    <input type="text" th:field="*{marke}" />
+    <br><br>
+
+    Max Geschwindigkeit:
+    <input type="number" th:field="*{maxGeschwindigkeit}" />
+    <br><br>
+
+    Preis:
+    <input type="number" step="0.01" th:field="*{preis}" />
+    <br><br>
+
+    <button type="submit">Speichern</button>
+
+</form>
+
+<br>
+<a th:href="@{/fahrzeuge/list}">Zurück zur Liste</a>
+
+</body>
+</html>
